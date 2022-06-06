@@ -1,5 +1,5 @@
 let grid = document.querySelector('.grid');
-let popup = document.querySelector('.popup');
+let popup = document.querySelector('#popup');
 let playAgain = document.querySelector('.playAgain');
 let scoreDisplay = document.querySelector('.scoreDisplay')
 let up = document.querySelector('.up');
@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Creates the game board //
 function createBoard() {
-    popup.style.display = 'none';
+    popup.style.display = 'hide';
     for (let i = 0; i < 100; i++) {
         let div = document.createElement('div');
         grid.appendChild(div);
+        div.style.zIndex = '1';
     }
 };
 
@@ -51,7 +52,6 @@ function moveOutcome() {
     if (checkForHits(squares)) {
         alert('You hit something!');
         playAgain.innerHTML = 'Play Again';
-        popup.style.top = '10.3125rem';
         popup.style.display = 'flex';
         return clearInterval(interval);
     } else {
