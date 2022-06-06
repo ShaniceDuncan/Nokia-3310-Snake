@@ -62,7 +62,7 @@ h2 {
     height: 6.25rem;
     width: 6.25rem;
     margin-bottom: 1.325rem;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
